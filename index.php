@@ -3,17 +3,17 @@
     require 'db_pagos_de_deudas.php';
     $pagos = getPagos();
 
-    function showPadosDeDeudas ($pagos){
-        $arregloPagos = array();
-        foreach($pagos as $pago){
-            array_push($arregloPagos, $pago);
-        }
 
+   function showPagosDeDeudas ($pagos){
+        
         $smarty = new Smarty();
-        $smarty->assign('pagos', $arregloPagos);
+        $smarty->assign('pagos', $pagos);
 
         $smarty->display('templates/pagos.tpl');
+
     }
+
+    showPagosDeDeudas($pagos);
 ?>
     
            
