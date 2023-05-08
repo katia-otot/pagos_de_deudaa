@@ -1,8 +1,10 @@
 <?php 
+function getConnection(){
+    return new PDO('mysql:host=localhost;'.'dbname=db_pagos_de_deudas;charset=utf8', 'root', '');
+}
 
 function getPagos(){
-    $db = new PDO('mysql:host=localhost;'.'dbname=db_pagos_de_deudas'
-                    ,'root', '');
+    $db = getConnection();
 
     $sentencia = $db->prepare("SELECT * FROM pagos");
     $sentencia->execute();
@@ -10,28 +12,4 @@ function getPagos(){
 
     return $pagos;
 }
-
-function insertPagos($deudor, $cuota, $cuota_capital, $fecha_pago){
-    $db = new PDO('mysql:host=localhost;'.'dbname=db_pagos_de_deudas'
-                    ,'root', '');
-    $sentencia = $db->prepare("INSERT INTO 'pagos' VULUES (NULL, $deudor, $cuota, $cuota_capital,$fecha_pago)");
-    $sentencia->execute();
-
-    header("Location: index.php");
-    exit;
-}
-
-if(isset($_POST)) {
-    $deudor = $_POST['deudor'];
-    $cuota = $_POST['cuota'];
-    $cuota_capital = $_POST['cuota_capital'];
-    $fecha_pago = $_POST['fecha_pago'];
-
-    insertPagos($deudor,
-    $cuota,
-    $cuota_capital,
-    $fecha_pago);
-}
-
-
 ?>
