@@ -12,4 +12,12 @@ function getPagos(){
 
     return $pagos;
 }
+
+function insertPago($deudor, $cuota, $cuota_capital, $fecha_pago){
+    $db = getConnection();
+
+    $sentencia = $db->prepare("INSERT INTO pagos(deudor, cuota, cuota_capital, fecha_pago) VALUES(?,?,?,?)");
+    $sentencia->execute([$deudor, $cuota, $cuota_capital, $fecha_pago]);
+}
+
 ?>

@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    {include file="header.tpl"}
     <main>
     <section>
         <table class="tabla">
@@ -31,24 +32,22 @@
         </tbody>
         </table>
     <h2>Formulario</h2>
-           <form method="post" action="db_pagos_de_deudas.php">
+           <form method="post" action="nuevoPago">
                 <label  for ="deudor"> Nombre: </label>
-                <input type = "text" name="deudor">
+                <input type = "text" name="deudor"><br>
 
-                <label  for ="cuota"> Numero de cuota: </label>
-                <input type = "number" name="cuota">
+                <label  for ="cuota"> Número de cuota: </label>
+                <input type = "number" name="cuota"><br>
 
                 <label  for ="cuota_capital"> Cuota capital: </label>
-                <input type = "number" name="cuota_capital">
+                <input type = "number" name="cuota_capital"><br>
 
                 <label  for ="fecha_pago"> Fecha de pago: </label>
-                <input type = "number" name="fecha_pago">
+                <input type = "number" name="fecha_pago"><br>
 
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar"><br>
            </form>
 
         </section>
     </main>
-
-</body>
-</html>
+    {include file="footer.tpl"}

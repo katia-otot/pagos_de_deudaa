@@ -1,26 +1,28 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-09 01:22:44
+/* Smarty version 4.3.1, created on 2023-05-09 04:29:46
   from 'C:\xampp\htdocs\Tp\pagos_de_deudaa\templates\pagos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_645984445662f8_17594721',
+  'unifunc' => 'content_6459b01a76f1e6_96175947',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5cb566ae09ec6ba993ab7feceb28ac47cfc15f1c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp\\pagos_de_deudaa\\templates\\pagos.tpl',
-      1 => 1683586278,
+      1 => 1683599330,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_645984445662f8_17594721 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6459b01a76f1e6_96175947 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +33,8 @@ function content_645984445662f8_17594721 (Smarty_Internal_Template $_smarty_tpl)
     <title>Document</title>
 </head>
 <body>
+    <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <main>
     <section>
         <table class="tabla">
@@ -65,25 +69,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tbody>
         </table>
     <h2>Formulario</h2>
-           <form method="post" action="db_pagos_de_deudas.php">
+           <form method="post" action="nuevoPago">
                 <label  for ="deudor"> Nombre: </label>
-                <input type = "text" name="deudor">
+                <input type = "text" name="deudor"><br>
 
-                <label  for ="cuota"> Numero de cuota: </label>
-                <input type = "number" name="cuota">
+                <label  for ="cuota"> Número de cuota: </label>
+                <input type = "number" name="cuota"><br>
 
                 <label  for ="cuota_capital"> Cuota capital: </label>
-                <input type = "number" name="cuota_capital">
+                <input type = "number" name="cuota_capital"><br>
 
                 <label  for ="fecha_pago"> Fecha de pago: </label>
-                <input type = "number" name="fecha_pago">
+                <input type = "number" name="fecha_pago"><br>
 
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar"><br>
            </form>
 
         </section>
     </main>
-
-</body>
-</html><?php }
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

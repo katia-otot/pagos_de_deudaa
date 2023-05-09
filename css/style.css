@@ -1,3 +1,15 @@
-.tabla{
-    border-width: 3px;
+table {
+    border: 1px solid black;
+}
+table th{
+    background-color: #e4d78d;
+}
+table tr, td, th {
+    border: 1px solid black;
+}
+table tr:nth-child(even) td {
+    background-color: #a5e07d;
+}
+table tr:nth-child(odd) td {
+    background-color: #90bdd8;
 }
