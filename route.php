@@ -1,5 +1,5 @@
 <?php
-require_once "src/index.php";
+require_once "src/pagos_de_deudas.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,7 +14,7 @@ $params =explode('/', $action);
 
 switch ($params[0]) {
     case 'index':
-        showPagosDeDeudas($pagos);
+        showPagosDeDeudas();
         break;
     case 'nuevoPago':
         addPago();

@@ -5,12 +5,8 @@
 <body>
 	<h1>Pagos agregados</h1>
 	<p>Su pago ha sido agregado correctamente.</p>
-	<button onclick="goBack()">Volver</button>
-
-	<script>
-		function goBack() {
-			window.history.back();
-		}
-	</script>
+	
+	<input type="submit" value="Volver" 
+   		onclick="window.location='index';" /> 
 </body>
 </html>

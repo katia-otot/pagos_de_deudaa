@@ -2,10 +2,11 @@
     require_once('libs/smarty/Smarty.class.php');
     require 'db_pagos_de_deudas.php';
 
-    $pagos = getPagos();
+  
 
-   function showPagosDeDeudas ($pagos){
-        
+   function showPagosDeDeudas() {
+        $pagos = getPagos();
+
         $smarty = new Smarty();
         $smarty->assign('pagos', $pagos);
 
@@ -24,8 +25,8 @@
             $url_pagos_agregados = 'pagos_agregados.tpl';
             $smarty = new Smarty();
             $smarty->assign('url_pagos_agregados', $url_pagos_agregados);
-            header("Location: $url_pagos_agregados");
-            exit();
+            $smarty->display('templates/'. $url_pagos_agregados);
+
         } 
         else {
             echo "Faltan datos";
