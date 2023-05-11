@@ -2,31 +2,37 @@
     require_once('libs/smarty/Smarty.class.php');
     require 'db_pagos_de_deudas.php';
 
-  
+   function showFormulario($id){
+        $smarty = new Smarty();
+
+        if($id == 0)
+            $pago = (object) array("id" => 0, "deudor" => "", "cuota" => "", "cuota_capital" => "", "fecha_pago" => "");
+        else
+            $pago = getPago($id);
+
+        $smarty->assign('pago', $pago);
+        $smarty->display('templates/formulario.tpl');
+   }
 
    function showPagosDeDeudas() {
         $pagos = getPagos();
-
+        
         $smarty = new Smarty();
         $smarty->assign('pagos', $pagos);
 
         $smarty->display('templates/pagos.tpl');
     }
 
-    function addPago(){
-        $deudor = $_POST['deudor'];
-        $cuota = $_POST['cuota'];
-        $cuota_capital = $_POST['cuota_capital'];
-        $fecha_pago = $_POST['fecha_pago'];
+    function addPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago){
 
         if (!empty($deudor) && !empty($cuota) && !empty($cuota_capital)){
-            insertPago($deudor, $cuota, $cuota_capital, $fecha_pago);
-            
-            $url_pagos_agregados = 'pagos_agregados.tpl';
-            $smarty = new Smarty();
-            $smarty->assign('url_pagos_agregados', $url_pagos_agregados);
-            $smarty->display('templates/'. $url_pagos_agregados);
 
+            if($id == 0)
+                insertPago($deudor, $cuota, $cuota_capital, $fecha_pago);
+            else
+                editarPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
+            
+            showPagosDeDeudas();
         } 
         else {
             echo "Faltan datos";

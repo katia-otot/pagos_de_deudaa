@@ -27,27 +27,16 @@
                     <td>{$pago->cuota}</td>
                     <td>{$pago->cuota_capital}</td>
                     <td>{$pago->fecha_pago}</td>
+                    <td><input type="submit" value="Editar" onclick="window.location='formulario/' + {$pago->id} ;" /> </td>
                 </tr>
             {/foreach}
         </tbody>
         </table>
-    <h2>Formulario</h2>
-           <form method="post" action="nuevoPago">
-                <label  for ="deudor"> Nombre: </label>
-                <input type = "text" name="deudor"><br>
-
-                <label  for ="cuota"> Número de cuota: </label>
-                <input type = "number" name="cuota"><br>
-
-                <label  for ="cuota_capital"> Cuota capital: </label>
-                <input type = "number" name="cuota_capital"><br>
-
-                <label  for ="fecha_pago"> Fecha de pago: </label>
-                <input type = "number" name="fecha_pago"><br>
-
-                <input type="submit" value="Enviar"><br>
-           </form>
+        
+        <input type="submit" value="Agregar" onclick="window.location='formulario/0';" /> 
 
         </section>
     </main>
     {include file="footer.tpl"}
+</body>
+</html>

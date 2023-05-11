@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-11 22:55:17
+/* Smarty version 4.3.1, created on 2023-05-12 01:05:27
   from 'C:\xampp\htdocs\web2\pagos_de_deudaa\templates\pagos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_645d5635c60038_77845957',
+  'unifunc' => 'content_645d74b7467826_89967935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e67703d86ff8a1426c68c4c725daa7e380205c7c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\pagos_de_deudaa\\templates\\pagos.tpl',
-      1 => 1683838127,
+      1 => 1683846323,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_645d5635c60038_77845957 (Smarty_Internal_Template $_smarty_tpl) {
+function content_645d74b7467826_89967935 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,31 +62,21 @@ $_smarty_tpl->tpl_vars['pago']->do_else = false;
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['pago']->value->fecha_pago;?>
 </td>
+                    <td><input type="submit" value="Editar" onclick="window.location='formulario/' + <?php echo $_smarty_tpl->tpl_vars['pago']->value->id;?>
+ ;" /> </td>
                 </tr>
             <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tbody>
         </table>
-    <h2>Formulario</h2>
-           <form method="post" action="nuevoPago">
-                <label  for ="deudor"> Nombre: </label>
-                <input type = "text" name="deudor"><br>
-
-                <label  for ="cuota"> Número de cuota: </label>
-                <input type = "number" name="cuota"><br>
-
-                <label  for ="cuota_capital"> Cuota capital: </label>
-                <input type = "number" name="cuota_capital"><br>
-
-                <label  for ="fecha_pago"> Fecha de pago: </label>
-                <input type = "number" name="fecha_pago"><br>
-
-                <input type="submit" value="Enviar"><br>
-           </form>
+        
+        <input type="submit" value="Agregar" onclick="window.location='formulario/0';" /> 
 
         </section>
     </main>
     <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+?>
+</body>
+</html><?php }
 }

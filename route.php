@@ -10,14 +10,22 @@ else{
     $action = 'index';
 }
 
-$params =explode('/', $action);
+$params = explode('/', $action);
 
 switch ($params[0]) {
     case 'index':
         showPagosDeDeudas();
         break;
+    case 'formulario': 
+        showFormulario($params[1]);
+        break;
     case 'nuevoPago':
-        addPago();
+        $id = $_POST['id'];
+        $deudor = $_POST['deudor'];
+        $cuota = $_POST['cuota'];
+        $cuota_capital = $_POST['cuota_capital'];
+        $fecha_pago = $_POST['fecha_pago'];
+        addPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
         break;
     default:
         # code...
