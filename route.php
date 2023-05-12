@@ -27,6 +27,8 @@ switch ($params[0]) {
         $fecha_pago = $_POST['fecha_pago'];
         addPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
         break;
+    case 'borrarPago':
+        borrarPago($id);
     default:
         # code...
         break;
