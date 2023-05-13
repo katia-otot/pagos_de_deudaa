@@ -28,7 +28,9 @@ switch ($params[0]) {
         addPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
         break;
     case 'borrarPago':
+        $id = $params[1];
         borrarPago($id);
+        break;
     default:
         # code...
         break;

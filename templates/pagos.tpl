@@ -28,6 +28,7 @@
                     <td>{$pago->cuota_capital}</td>
                     <td>{$pago->fecha_pago}</td>
                     <td><input type="submit" value="Editar" onclick="window.location='formulario/' + {$pago->id} ;" /> </td>
+                    <td><input type="submit" value="Borrar" onclick="window.location='borrarPago/' + {$pago->id} ;" /> </td>
                 </tr>
             {/foreach}
         </tbody>

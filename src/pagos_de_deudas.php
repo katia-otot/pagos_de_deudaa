@@ -32,13 +32,18 @@
             else
                 editarPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
             
-            showPagosDeDeudas();
+                header('Location: index');
         } 
         else {
             echo "Faltan datos";
         }
     }
-   
+    
+    function borrarPago ($id) {
+        deletePago($id);
+         
+        header('Location: ../index');
+    }
 ?>
     
            

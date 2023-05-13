@@ -37,4 +37,10 @@ function editarPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago) {
     $sentencia->execute([$deudor, $cuota, $cuota_capital, $fecha_pago, $id]);
 }
 
+function deletePago($id){
+    $db = getConnection();
+
+    $sentencia = $db->prepare("DELETE FROM pagos WHERE id = ?");
+    $sentencia->execute([$id]);
+}
 ?>
