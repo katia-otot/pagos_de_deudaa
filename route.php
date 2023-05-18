@@ -1,23 +1,24 @@
 <?php
-require_once "src/pagos_de_deudas.php";
-
+require_once "controllers/pagosController.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+
+$controller = new pagosController;
 
 if(!empty($_GET['action'])){
     $action = $_GET['action'];
 }
 else{
-    $action = 'index';
+   $action = 'index';
 }
 
 $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'index':
-        showPagosDeDeudas();
+       $controller -> getPagos();
         break;
     case 'formulario': 
-        showFormulario($params[1]);
+        $controller -> showFormulario($params[1]);
         break;
     case 'nuevoPago':
         $id = $_POST['id'];
@@ -25,11 +26,11 @@ switch ($params[0]) {
         $cuota = $_POST['cuota'];
         $cuota_capital = $_POST['cuota_capital'];
         $fecha_pago = $_POST['fecha_pago'];
-        addPago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
+        $controller -> insertUpdatePago($id, $deudor, $cuota, $cuota_capital, $fecha_pago);
         break;
     case 'borrarPago':
         $id = $params[1];
-        borrarPago($id);
+       $controller -> deletePago($id);
         break;
     default:
         # code...

@@ -1,5 +1,5 @@
 <?php 
-function getConnection(){
+/*function getConnection(){
     return new PDO('mysql:host=localhost;'.'dbname=db_pagos_de_deudas;charset=utf8', 'root', '');
 }
 

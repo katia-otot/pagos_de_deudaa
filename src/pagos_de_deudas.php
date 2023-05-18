@@ -1,5 +1,5 @@
 <?php
-    require_once('libs/smarty/Smarty.class.php');
+  /*  require_once('libs/smarty/Smarty.class.php');
     require 'db_pagos_de_deudas.php';
 
    function showFormulario($id){
