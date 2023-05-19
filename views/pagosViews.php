@@ -9,6 +9,7 @@ class pagosView{
 
     public function showPagosDeDeudas($pagos) {
         $smarty = new Smarty();
+        
         $smarty->assign('pagos', $pagos);
         $smarty->display('templates/pagos.tpl');
     }
